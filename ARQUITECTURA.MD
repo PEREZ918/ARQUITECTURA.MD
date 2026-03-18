@@ -24,6 +24,13 @@ Nuestro sistema requiere una base de datos relacional debido a la naturaleza est
 
 En este entorno podríamos implementar tecnologías como Amazon S3, cloudinary o sistema de archivos esto ya dependerá de el entorno de despliegue que tengamos en cuenta. Esto se implementará ya que las bases de datos relacionales no están diseñadas para almacenar archivos pesados, dado que el sistema manejara documentos de dominio publico y expedientes, estos se almacenaran en un servicio de almacenamiento de objetos, en MySQL solo se guardara la URL o ruta de referencia al archivo optimizando el rendimiento de las consultas y reduciendo costos de base de datos.
 
+# EJEMPLO DE ESTRUCTURA DE BASE DE DATOS 
+
+
+
+
+
+
 
 
 
