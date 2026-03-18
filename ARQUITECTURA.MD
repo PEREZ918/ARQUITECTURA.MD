@@ -1,3 +1,3 @@
 
-#ARQUITECTURA
-##Arquitectura de desarrollo para el sistema jurídico 
+# ARQUITECTURA
+## Arquitectura de desarrollo para el sistema jurídico 
