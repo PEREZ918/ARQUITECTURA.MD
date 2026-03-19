@@ -9,3 +9,30 @@ en conclusión nuestro sistema no solo resolveria los problemas que muchos ciuda
 
 ### PROYECCION
 A pesar de que nuestro sistema en un inicio esta pensado para ser de usu gartuito y libre, en el futuro esto podria cambiar, esto sin necesidad de que el acceso gartuito desaparezca si no implementando una alternativa de pago en la cual el cliente pueda obtener una asistencia más especializada de colaboradores que tenagn una amplia experiencia en el area de sistema juridico, para que a pesar de que en un inicio se pueda resolver un problema o una duda en concreto, esto se pueda materializar a través de otra asistencia que si el cliente desea y cuenta con la posibilidad de acceder a este servicio lo haga si  afectar a nuestros usuarios que no tienen esas mismas posibilidades.
+
+
+
+# EJEMPLO BASE DE DATOS DE LA ARQUITECTURA
+
+
+
+
+<img width="1365" height="767" alt="Captura de pantalla 2026-03-16 112304" src="https://github.com/user-attachments/assets/28da5c77-d80a-426a-a806-2aebd1cc7967" />
+
+
+
+# EJEMPLO DE LA INTERFAZ WEB CREADA CON STITCH
+
+
+<img width="738" height="529" alt="Captura de pantalla 2026-03-16 115247" src="https://github.com/user-attachments/assets/370c2a74-1f70-456d-9996-1f775dcd4f4a" />
+
+
+<img width="725" height="579" alt="Captura de pantalla 2026-03-16 115309" src="https://github.com/user-attachments/assets/efda0458-e729-4628-acc2-b0abdb96ef96" />
+
+
+<img width="723" height="577" alt="Captura de pantalla 2026-03-16 115319" src="https://github.com/user-attachments/assets/a4a8f442-8081-48f0-a128-22bc8d88a403" />
+
+
+
+
+
