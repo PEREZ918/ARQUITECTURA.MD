@@ -30,7 +30,25 @@ A pesar de que nuestro sistema en un inicio esta pensado para ser de usu gartuit
 <img width="725" height="579" alt="Captura de pantalla 2026-03-16 115309" src="https://github.com/user-attachments/assets/efda0458-e729-4628-acc2-b0abdb96ef96" />
 
 
-<img width="723" height="577" alt="Captura de pantalla 2026-03-16 115319" src="https://github.com/user-attachments/assets/a4a8f442-8081-48f0-a128-22bc8d88a403" />
+<img width="723" height="577" alt="Captura de pantalla 2026-03-16 115319" src="https://github.com/user-attachments/assets/a4a8f442-8081-
+48f0-a128-22bc8d88a403" />
+
+# METODOS PARA CREACIÓN DE USUARIO Y ABOGADO ADEMAS DE REGISTRO DE CONSULTAS 
+
+## CREACIÓN DE CONSULTAS
+<img width="1312" height="618" alt="Captura de pantalla 2026-04-23 154042" src="https://github.com/user-attachments/assets/b0ab1222-86f6-40c9-9a63-7f44936158f1" />
+
+## REGISTRO DE USAURIO
+<img width="1363" height="762" alt="Captura de pantalla 2026-04-23 111653" src="https://github.com/user-attachments/assets/a387eb38-d6b6-4a3b-bf69-59df03c7a28a" />
+
+## REGISTRO DE ABOGADO
+<img width="1361" height="763" alt="Captura de pantalla 2026-04-23 133835" src="https://github.com/user-attachments/assets/93cb6353-c492-4a72-b5c1-3c14cea2a091" />
+
+
+
+
+
+
 
 
 
