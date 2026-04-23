@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +19,26 @@
             pointer-events: none;
             animation: float 8s ease-in-out infinite;
         }
+
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
+
         .steps-indicator {
             display: flex;
             justify-content: center;
             gap: 0.5rem;
             margin-bottom: 2rem;
         }
+
         .step-dot {
             width: 40px;
             height: 4px;
@@ -35,16 +46,19 @@
             background: var(--glass-border);
             transition: var(--transition);
         }
+
         .step-dot.active {
             background: var(--accent);
             width: 60px;
         }
+
         .role-selector {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0.75rem;
             margin-bottom: 0.5rem;
         }
+
         .role-option {
             padding: 1rem;
             border: 1.5px solid var(--glass-border);
@@ -54,42 +68,51 @@
             transition: var(--transition);
             background: var(--bg-input);
         }
+
         .role-option:hover {
             border-color: rgba(201, 162, 39, 0.3);
         }
+
         .role-option.selected {
             border-color: var(--accent);
             background: rgba(201, 162, 39, 0.08);
         }
+
         .role-option .role-icon {
             font-size: 1.5rem;
             margin-bottom: 0.4rem;
         }
+
         .role-option .role-title {
             font-weight: 600;
             font-size: 0.9rem;
             color: var(--text-primary);
             margin-bottom: 0.2rem;
         }
+
         .role-option .role-desc {
             font-size: 0.75rem;
             color: var(--text-secondary);
         }
+
         .field-error {
             color: #fca5a5;
             font-size: 0.8rem;
             margin-top: 0.3rem;
             display: none;
         }
+
         #especialidadGroup {
             display: none;
             margin-bottom: 1.25rem;
         }
+
         #especialidadGroup.show {
             display: block;
         }
     </style>
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -116,7 +139,8 @@
             <form id="registerForm">
                 <div class="form-group">
                     <label for="nombreCompleto">Nombre Completo</label>
-                    <input type="text" id="nombreCompleto" required placeholder="Ej. Juan Pérez García" autocomplete="name">
+                    <input type="text" id="nombreCompleto" required placeholder="Ej. Juan Pérez García"
+                        autocomplete="name">
                     <div class="field-error" id="err-nombre"></div>
                 </div>
 
@@ -128,7 +152,8 @@
 
                 <div class="form-group">
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" required placeholder="Mínimo 6 caracteres" autocomplete="new-password">
+                    <input type="password" id="password" required placeholder="Mínimo 6 caracteres"
+                        autocomplete="new-password">
                     <div class="field-error" id="err-password"></div>
                 </div>
 
@@ -177,7 +202,7 @@
         auth.redirectIfAuthenticated();
 
         // Asegurar que el DOM está listo
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // --- Role Selector ---
             function selectRole(el) {
                 const selectedRole = el.getAttribute('data-role');
@@ -188,7 +213,7 @@
                 // Mostrar/ocultar campo de especialidad
                 const especialidadGroup = document.getElementById('especialidadGroup');
                 const especialidadSelect = document.getElementById('especialidad');
-                
+
                 if (selectedRole === 'ABOGADO') {
                     especialidadGroup.classList.add('show');
                     especialidadSelect.required = true;
@@ -205,7 +230,7 @@
 
             // Asignar la función a las opciones
             document.querySelectorAll('.role-option').forEach(option => {
-                option.addEventListener('click', function() {
+                option.addEventListener('click', function () {
                     selectRole(this);
                 });
             });
@@ -312,4 +337,5 @@
         });
     </script>
 </body>
+
 </html>

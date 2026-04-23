@@ -8,6 +8,7 @@ import com.lexguard.repositories.ConsultaRepository;
 import com.lexguard.repositories.UsuarioRepository;
 import com.lexguard.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -24,6 +25,9 @@ public class MensajeService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private SimpMessagingTemplate messagingTemplate;
 
     public Mensaje crearMensaje(Long consultaId, String emailUsuario, String contenido, String tipoEmisor) {
         Consulta consulta = consultaRepository.findById(consultaId)
@@ -44,7 +48,10 @@ public class MensajeService {
         mensaje.setTipoEmisor(tipoEmisor);
         mensaje.setFechaCreacion(LocalDateTime.now());
 
-        return mensajeRepository.save(mensaje);
+        Mensaje guardado = mensajeRepository.save(mensaje);
+        messagingTemplate.convertAndSend("/topic/consulta/" + consultaId, guardado);
+
+        return guardado;
     }
 
     public List<Mensaje> obtenerMensajesConsulta(Long consultaId) {

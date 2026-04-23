@@ -56,6 +56,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/css/**", "/js/**", "/images/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/auth/registro").permitAll()
+                .requestMatchers("/ws/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/consultas/mis-consultas").authenticated()
                 .requestMatchers(HttpMethod.POST, "/api/consultas/crear").authenticated()
                 .requestMatchers(HttpMethod.GET, "/api/usuarios/me").authenticated()
