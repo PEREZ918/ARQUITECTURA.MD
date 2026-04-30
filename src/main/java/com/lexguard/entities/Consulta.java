@@ -33,7 +33,7 @@ public class Consulta {
     
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private com.lexguard.entities.enums.ConsultaTipo tipo = com.lexguard.entities.enums.ConsultaTipo.CIVIL; // Valor por defecto
+    private com.lexguard.entities.enums.ConsultaTipo tipo = com.lexguard.entities.enums.ConsultaTipo.CIVIL; 
 
     
     @Enumerated(EnumType.STRING)

@@ -74,6 +74,11 @@ public class ConsultaService {
         return consultaRepository.findByUsuarioEmail(email, pageable);
     }
     
+    public Consulta obtenerConsultaPorId(Long id) {
+        return consultaRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("No se encontró la consulta con ID: " + id));
+    }
+    
     public Page<Consulta> obtenerTodasLasConsultas(Pageable pageable) {
         return consultaRepository.findAll(pageable);
     }

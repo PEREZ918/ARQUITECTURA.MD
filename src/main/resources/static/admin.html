@@ -33,12 +33,12 @@
             </div>
         </aside>
 
-        <!-- Main -->
+        
         <main class="dashboard-main">
 
             <div id="alertMsg" class="alert" style="display: none;"></div>
 
-            <!-- VIEW: STATS -->
+            
             <div id="viewStats" class="admin-view">
                 <div class="page-header">
                     <h1>Estadísticas del Sistema</h1>
@@ -166,7 +166,6 @@
         let allUsers = [];
         let allQueries = [];
 
-        // ===== VIEW SWITCHING =====
         function switchAdminView(view, linkEl) {
             document.querySelectorAll('.admin-view').forEach(v => v.style.display = 'none');
             document.getElementById('view' + view.charAt(0).toUpperCase() + view.slice(1)).style.display = 'block';
@@ -178,7 +177,6 @@
             if (view === 'queries') loadQueries();
         }
 
-        // ===== LOAD STATS =====
         async function loadStats() {
             const uStats = await fetchApi('/usuarios/stats', { method: 'GET' });
             if (uStats && !uStats.isError) {
@@ -195,7 +193,6 @@
             }
         }
 
-        // ===== LOAD USERS =====
         async function loadUsers() {
             const users = await fetchApi('/usuarios', { method: 'GET' });
             if (users && !users.isError) {
@@ -231,7 +228,7 @@
             `).join('');
         }
 
-        // ===== CHANGE ROLE =====
+
         async function changeRole(userId, newRole) {
             const res = await fetchApi(`/usuarios/${userId}/rol`, {
                 method: 'PUT',
@@ -259,7 +256,6 @@
             }
         }
 
-        // ===== LOAD QUERIES =====
         async function loadQueries() {
             const queries = await fetchApi('/consultas/todas', { method: 'GET' });
             if (queries && !queries.isError) {

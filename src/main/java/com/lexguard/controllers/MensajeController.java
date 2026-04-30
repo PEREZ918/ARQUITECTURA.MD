@@ -27,7 +27,7 @@ public class MensajeController {
             Authentication authentication) {
         try {
             String contenido = payload.get("contenido");
-            String tipoEmisor = payload.get("tipoEmisor"); // "CLIENT" o "LAWYER"
+            String tipoEmisor = payload.get("tipoEmisor"); 
             String email = authentication.getName();
 
             if (contenido == null || contenido.trim().isEmpty()) {

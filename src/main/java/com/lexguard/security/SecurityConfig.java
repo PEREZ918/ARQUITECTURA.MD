@@ -68,11 +68,23 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
             )
             
+            .httpBasic(basic -> basic
+                .realmName("LexGuard API")
+            )
+            
             .exceptionHandling(exc -> exc
                 .authenticationEntryPoint((request, response, authException) -> {
-                    response.setContentType("application/json");
-                    response.setStatus(401);
-                    response.getWriter().write("{\"error\":\"No autenticado\"}");
+                    String authHeader = request.getHeader("Authorization");
+                    if (authHeader != null && authHeader.startsWith("Basic ")) {
+                        response.setHeader("WWW-Authenticate", "Basic realm=\"LexGuard API\"");
+                        response.setContentType("application/json");
+                        response.setStatus(401);
+                        response.getWriter().write("{\"error\":\"Credenciales inválidas\"}");
+                    } else {
+                        response.setContentType("application/json");
+                        response.setStatus(401);
+                        response.getWriter().write("{\"error\":\"No autenticado\"}");
+                    }
                 })
                 .accessDeniedHandler((request, response, accessDeniedException) -> {
                     response.setContentType("application/json");
@@ -90,19 +102,16 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         
-        List<String> allowedOrigins = Arrays.asList(
-            "http://localhost:3000",      
-            "http://localhost:5173",      
-            "http://localhost:8080",      
-            "http://127.0.0.1:8080",      
-            "http://127.0.0.1:5173"       
-        );
-
-        
-        String prodOrigin = System.getenv("ALLOWED_ORIGIN");
-        if (prodOrigin != null && !prodOrigin.isEmpty()) {
-            allowedOrigins.add(prodOrigin);
-        }
+        List<String> allowedOrigins = new java.util.ArrayList<>(Arrays.asList(
+            "http://localhost:3000",
+            "http://localhost:5173",
+            "http://localhost:8080",
+            "http://127.0.0.1:8080",
+            "http://127.0.0.1:5173",
+            "https://lexguard-ae3b9-67636.web.app",
+            "https://lexguard-ae3b9.web.app",
+            "https://lexguard-ae3b9.firebaseapp.com"
+        ));
 
         configuration.setAllowedOrigins(allowedOrigins);
 

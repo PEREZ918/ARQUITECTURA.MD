@@ -95,6 +95,13 @@ public class ConsultaController {
         return ResponseEntity.ok(consultas.map(this::mapToDTO));
     }
 
+    @GetMapping("/{id}")
+    @PreAuthorize("isAuthenticated()")
+    public ResponseEntity<ConsultaDTO> obtenerConsultaPorId(@PathVariable Long id) {
+        Consulta consulta = consultaService.obtenerConsultaPorId(id);
+        return ResponseEntity.ok(mapToDTO(consulta));
+    }
+
     @GetMapping("/usuario/{usuarioId}")
     public ResponseEntity<Page<ConsultaDTO>> obtenerConsultasPorUsuario(
             @PathVariable Long usuarioId,
